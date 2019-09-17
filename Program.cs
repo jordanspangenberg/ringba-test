@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 
@@ -64,7 +65,7 @@ namespace ringba_test
                                 {
                                     words[word] += 1;
                                 }
-                                if (word.Length > 2) 
+                                if (word.Length > 2)
                                 {
                                     string prefix = word.Substring(0, 2);
                                     if (!prefixes.ContainsKey(prefix))
@@ -98,11 +99,27 @@ namespace ringba_test
 
             foreach (var key in uppercaseLetters.Keys)
             {
-                System.Console.WriteLine($"{key}: " + uppercaseLetters[key]);
+                System.Console.WriteLine($"{key}: " + 
+                    (uppercaseLetters[key] + 
+                    lowercaseLetters[Char.ToLower(key)]));
             }
 
             System.Console.WriteLine("Word count: " + uppercaseCount);
 
+/*             foreach (var key in words.Keys)
+            {
+                System.Console.WriteLine($"{key}: " + words[key]);
+            }
+
+            foreach (var key in prefixes.Keys)
+            {
+                System.Console.WriteLine($"{key}: " + prefixes[key]);
+            } */
+
+            var keyOfMaxValueWords = words.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+            System.Console.WriteLine(keyOfMaxValueWords + $": {words[keyOfMaxValueWords]}");
+            var keyOfMaxValuePrefixes = prefixes.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+            System.Console.WriteLine(keyOfMaxValuePrefixes + $": {prefixes[keyOfMaxValuePrefixes]}");
         }
 
         static void getTestFile(WebClient client, string filename)
