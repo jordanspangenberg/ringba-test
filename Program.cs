@@ -51,12 +51,14 @@ namespace ringba_test
                                 uppercaseLetters[ch] += 1;
                             }
                             uppercaseCount++; // increment our word count / uppercase count
+                            // If we have encountered an uppercase character that means
+                            // we need to deal with our words and prefixes. 
                             if (!sb.Equals(""))
                             {
                                 string word = sb.ToString();
                                 if (!words.ContainsKey(word))
                                 {
-                                    words.Add(word, 0);
+                                    words.Add(word, 1);
                                 }
                                 else
                                 {
@@ -64,10 +66,18 @@ namespace ringba_test
                                 }
                                 if (word.Length > 2) 
                                 {
-                                    
+                                    string prefix = word.Substring(0, 2);
+                                    if (!prefixes.ContainsKey(prefix))
+                                    {
+                                        prefixes.Add(prefix, 1);
+                                    }
+                                    else
+                                    {
+                                        prefixes[prefix] += 1;
+                                    }
                                 }
                             }
-
+                            sb.Clear();
                         }
                         else
                         {
