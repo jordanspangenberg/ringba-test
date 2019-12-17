@@ -105,17 +105,6 @@ namespace ringba_test
             }
 
             System.Console.WriteLine("Word count: " + uppercaseCount);
-
-/*             foreach (var key in words.Keys)
-            {
-                System.Console.WriteLine($"{key}: " + words[key]);
-            }
-
-            foreach (var key in prefixes.Keys)
-            {
-                System.Console.WriteLine($"{key}: " + prefixes[key]);
-            } */
-
             var keyOfMaxValueWords = words.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
             System.Console.WriteLine(keyOfMaxValueWords + $": {words[keyOfMaxValueWords]}");
             var keyOfMaxValuePrefixes = prefixes.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
