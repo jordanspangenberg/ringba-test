@@ -1,6 +1,5 @@
 # Takehome Coding Challenge
 
-```
 
 We appreciate your interest in our job posting. Before you are able to interview for this position, we require a basic code test to be completed to assess your skills. 
 
@@ -30,4 +29,3 @@ Download the .Net Core 2.2 runtime and create a directory ringba-test. Navigate 
 We look forward to seeing what you can do! 
 
 
-```
