@@ -5,7 +5,7 @@ We appreciate your interest in our job posting. Before you are able to interview
 
 *The Code Test* 
 
-Please write a .Net Core 2.2 application that downloads this file https://ringba-test-html.s3-us-west-1.amazonaws.cÖ and then prints out some statistics about the file. 
+Please write a .Net Core 2.2 application that downloads this file https://ringba-test-html.s3-us-west-1.amazonaws.com and then prints out some statistics about the file. 
 
 The file is using a very simple form of compression in which there are no spaces, each word is separated by camel casing. For Example, the string "TheCatWillRun" is parsed as "The Cat Will Run". 
 
